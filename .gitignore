@@ -1,5 +1,4 @@
 # pandoc generated pdf
-*.pdf
 .DS_STORE
 # zip files
 #*.zip
