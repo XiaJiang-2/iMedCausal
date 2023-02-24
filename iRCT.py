@@ -32,7 +32,7 @@ class iRCT:
         '''
 
         finalVal = 0.0
-        if int(self.functionNum) == 1:
+        if int(self.functionNum) == 2:
             T = self.treatmentCol
             Y = self.outcomeCol
             X = self.df.columns.drop([T, Y])
@@ -53,10 +53,10 @@ class iRCT:
             ate = np.mean(weight * data_ps[self.outcomeCol])
             finalVal = ate
             return finalVal
-        elif int(self.functionNum) == 2:
+        elif int(self.functionNum) == 3:
             finalVal = self.SecondAttempt_CalculateRelationVal()
             return finalVal
-        elif int(self.functionNum) == 3:
+        elif int(self.functionNum) == 4:
             finalVal = self.FirstAttempt_calculateRelationVal()
             return finalVal
 
