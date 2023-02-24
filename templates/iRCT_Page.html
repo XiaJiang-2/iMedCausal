@@ -14,29 +14,35 @@
             <p>The treatment column is the column that is being determined if it is influencing the outcome column.</p>
             <label for="treat_column">Choose the treatment column:</label>
             <select id="columns" name="treat_column">
-                {% for column in columns %}
-                <option value='{{column}}'>{{ column }}</option>
-                {% endfor %}
+                {% if functionNum == "1" %}
+                    <option value='N/A'>N/A</option>
+                {% endif %}
+                {% if functionNum != "1" %}
+                    {% for column in columns %}
+                    <option value='{{column}}'>{{ column }}</option>
+                    {% endfor %}
+                {% endif %}
             </select>
 
             <br/>
 
-            <p>The outcome column is the column that is being determined if it is being influenced by the treatment column.</p>
+            <p>The outcome column is the column that is being determined if it is being influenced by the treatment column. If MBIL is chosen this is the target variable to determine all direct causes.</p>
             <label for="out_column">Choose the outcome column:</label>
             <select id="columns" name="out_column">
                 {% for column in columns %}
                 <option value='{{column}}'>{{ column }}</option>
                 {% endfor %}
             </select>
-
-            <p>If you chose the single covariate option, please choose the column that will be your single covariate. If not set this value to N/A.</p>
-            <label for="covariate_column">Choose the single covariate column:</label>
-            <select id="columns" name="covariate_column">
-                <option value='N/A'>N/A</option>
-                {% for column in columns %}
-                <option value='{{column}}'>{{ column }}</option>
-                {% endfor %}
-            </select>
+            
+            {% if functionNum == "4" %}
+                <p>If you chose the single covariate option, please choose the column that will be your single covariate.</p>
+                <label for="covariate_column">Choose the single covariate column:</label>
+                <select id="columns" name="covariate_column">
+                    {% for column in columns %}
+                    <option value='{{column}}'>{{ column }}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
 
             <br/>
 
