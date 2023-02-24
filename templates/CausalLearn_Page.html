@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Causal Learning Function Page</title>
+{% endblock %}
+
+{% block body %}
+    <div id="body">
+        <p>File successfully uploaded!</p>
+        <p>File Name: {{name}}</p>
+
+        <p>The currently available algorithms are FCI, rFCI, GES, FGES, and PC.</p>
+
+        <br/>
+
+        <form method="POST">
+            <label for="learnAlgorithm">Choose the causal learning algorithm you want to apply to your dataset:</label>
+            <select id="algorithms" name="algorithm">
+                <option value="FCI">FCI</option>
+                <option value="rFCI">rFCI</option>
+                <option value="GES">GES</option>
+                <option value="FGES">FGES</option>
+                <option value="PC">PC</option>
+            </select>
+    
+            <br/>
+    
+            <select name="fileName" hidden>
+                <option value='{{ name }}'></option>
+            </select>
+            
+            <br/>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

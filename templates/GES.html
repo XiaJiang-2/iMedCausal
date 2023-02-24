@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GES delimiter selection Page</title>
+{% endblock %}
+
+{% block body %}
+    <div id="body">
+        <form method="POST">
+            <label for="delim">Please specify the delimiter for your dataset here:</label>
+            <select id="delimiters" name="delim">
+                <option value=":">colon</option>
+                <option value=",">comma</option>
+                <option value="|">pipe</option>
+                <option value=";">semicolon</option>
+                <option value=" ">space</option>
+                <option value="\t">tab</option>
+            </select>
+            <br/>
+
+            <input type="submit" value="Upload">
+
+            <select name="fileName" hidden>
+                <option value='{{ name }}'></option>
+            </select>
+        </form>
+    </div>
+{% endblock %}

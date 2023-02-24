@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>rFCI delimiter selection Page</title>
+{% endblock %}
+
+{% block body %}
+    <div id="body">
+        <form method="POST">
+            <label for="delim">Please specify the delimiter for your dataset here:</label>
+            <select id="delimiters" name="delim">
+                <option value="colon">colon</option>
+                <option value="comma">comma</option>
+                <option value="pipe">pipe</option>
+                <option value="semicolon">semicolon</option>
+                <option value="space">space</option>
+                <option value="tab">tab</option>
+                <option value="whitespace">whitespace</option>
+            </select>
+            <br/>
+
+            <input type="submit" value="Upload">
+
+            <select name="fileName" hidden>
+                <option value='{{ name }}'></option>
+            </select>
+        </form>
+    </div>
+{% endblock %}

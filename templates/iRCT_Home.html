@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>iRCT Home Page</title>
+{% endblock %}
+
+{% block body %}
+    <div id="body">
+        <h1>Welcome to iRCT's webpage!</h1>
+        <p>Please note the following before uploading a file:</p>
+        <li>All data in the file must be numerical.</li>
+        <li>The currently accepted file formats are: txt, csv, xlsx, and dat</li>
+        <li>NOTE: using certain functions on your dataset might cause errors or not work.</li>
+        <li>NOTE: The functions other than the most up-to-date might take multiple minutes to run.</li>
+    </div>
+
+    <br/>
+
+    <div id="input">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <label for="delim">Please specify the delimiter for your dataset here:</label>
+            <select id="delimiters" name="delim">
+                <option value=":">colon</option>
+                <option value=",">comma</option>
+                <option value="|">pipe</option>
+                <option value=";">semicolon</option>
+                <option value=" ">space</option>
+                <option value="\t">tab</option>
+            </select>
+            <br/>
+
+            <label for="functionNum">Please sepcify the function you would like to use:</label>
+            <select id="functions" name="functionNum">
+                <option value="1">Most up-to-date Function (Multiple covariates, fastest)</option>
+                <option value="2">Multiple covariates iterative propensity score method</option>
+                <option value="3">Single covariate iterative method</option>
+            </select>
+            <br/>
+
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <br/>
+
+    <div id="Error">
+        <p>{{ error }}</p>
+    </div>
+{% endblock %}

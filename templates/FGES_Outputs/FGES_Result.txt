@@ -1,0 +1,65 @@
+================================================================================
+FGES (Wed, February 15, 2023 03:40:25 PM)
+================================================================================
+
+Runtime Parameters
+--------------------------------------------------------------------------------
+number of threads: 7
+
+Dataset
+--------------------------------------------------------------------------------
+file: COVID3_4Nodes3.txt
+header: yes
+delimiter: comma
+quote char: none
+missing marker: none
+comment marker: none
+
+Algorithm Run
+--------------------------------------------------------------------------------
+algorithm: FGES
+score: Sem BIC Score
+
+Algorithm Parameters
+--------------------------------------------------------------------------------
+addOriginalDataset: no
+faithfulnessAssumed: no
+maxDegree: 100
+meekVerbose: no
+numberResampling: 0
+parallelism: 1
+penaltyDiscount: 1.0
+percentResampleSize: 90
+resamplingEnsemble: 0
+resamplingWithReplacement: no
+semBicRule: 1
+semBicStructurePrior: 0.0
+symmetricFirstStep: no
+verbose: no
+
+
+Wed, February 15, 2023 03:40:25 PM: Start data validation on file COVID3_4Nodes3.txt.
+Wed, February 15, 2023 03:40:25 PM: End data validation on file COVID3_4Nodes3.txt.
+There are 50000 cases and 4 variables.
+
+Wed, February 15, 2023 03:40:25 PM: Start reading in file COVID3_4Nodes3.txt.
+Wed, February 15, 2023 03:40:25 PM: Finished reading in file COVID3_4Nodes3.txt.
+Wed, February 15, 2023 03:40:25 PM: File COVID3_4Nodes3.txt contains 50000 cases, 4 variables.
+
+Start search: Wed, February 15, 2023 03:40:25 PM
+End search: Wed, February 15, 2023 03:40:25 PM
+
+================================================================================
+Graph Nodes:
+ED_Visit;Dyspnea;COPD;COVID
+
+Graph Edges:
+1. COPD --> Dyspnea
+2. COVID --> Dyspnea
+3. Dyspnea --> ED_Visit
+
+Graph Attributes:
+BIC: 707348.594709
+
+Graph Node Attributes:
+BIC: [ED_Visit: 220227.007301;Dyspnea: 215426.017839;COPD: 150842.304893;COVID: 120853.264676]

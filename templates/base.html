@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="/static/styles.css">
+	{% block head %} {% endblock %}
+</head>
+
+{% block body %} {% endblock %}
+<footer class=" text-center text-lg-start footer bg-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<p class=" m-0 text-center text-white"><a href="https://policies.google.com/terms">Terms and Conditions</a></p>
+				<p class=" m-0 text-center text-white"><a href="https://policies.google.com/privacy">Privacy Policy</a></p>
+			</div>
+			<div class="col-md-4">
+				<p class=" m-0 text-center text-white">Contact: <a href="mailto:xij6@pitt.edu">xij6@pitt.edu</a></p>
+				<p class=" m-0 text-center text-white">Copyright © 2023 Xia Jiang, University of Pittsburgh.All right reserved.</p>
+			</div>
+
+			<div class="col-md-4">
+				<!--<p class=" m-0 text-center text-white">External Links</p>-->
+				<p class=" m-0 text-center text-white"><a href='#' onclick="show_window()">Agreements to use our software</a></p>
+			</div>
+
+		</div>
+		<!--
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p class=" m-0 text-center text-white"> All rights reserved.</p>
+			</div>
+		</div>
+		-->
+	</div>
+</footer>
+</div>
+
+<script>
+function show_window(){
+  var myWindow = window.open("", "copyright", "width=700,height=700");   // Opens a new window
+  myWindow.document.write("<h1>Acknowledgements:</h1><p>If you use our software in your research, please acknowledge the Dr. Jiang’s AI lab situated in University of Pittsburgh, supported by grant W81XWH1910495 , in any papers, presentations, or other dissemination of your work, and please cite in your publications the relevant papers for a software you used, which can normally be found following the “references” link on the front page of the software.</p><h1>License Agreements:</h1><p>All software is open-source and released under a dual licensing model. For non-profit institutions, the software is available under the GNU General Public License (GPL) v2 license. For-profit organizations that wish to commercialize enhanced or customized versions of the software will be able to purchase a commercial license on a case-by-case basis. The GPL license permits individuals to modify the source code and to share modifications with other colleagues/investigators. Specifically, it permits the dissemination and commercialization of enhanced or customized versions as well as incorporation of the software or its pieces into other license-compatible software packages, as long as modifications or enhancements are made open source.</p><h1>Disclaimer:</h1><p>By using software provided by this site , you agree that no warranties of any kind are made by the University of Pittsburgh with respect to the data provided by the software or any use thereof, and the universities hereby disclaim the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. The universities shall not be liable for any claims, losses, or damages of any kind arising from the data provided by the software or any use thereof.</p>");   // Text in the new window
+  }
+</script>
+</html>

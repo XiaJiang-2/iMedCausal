@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>iRCT Output Page</title>
+{% endblock %}
+
+{% block body %}
+    <div id="output">
+        <p>Relation Value for the treatment being "{{ treatment }}" and the outcome being "{{ outcome }}":</p>
+        <p>{{ result }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>FGES Output Page</title>
+{% endblock %}
+
+{% block body %}
+    <div>
+        {% for Line in Lines %}
+        <p>{{ Line }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

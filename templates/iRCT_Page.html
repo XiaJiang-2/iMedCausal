@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>iRCT Function Page</title>
+{% endblock %}
+
+{% block body %}
+    <div id="submit_irct">
+        <p>File successfully uploaded!</p>
+        <p>File Name: {{name}}</p>
+
+        <form method="POST">
+
+            <p>The treatment column is the column that is being determined if it is influencing the outcome column.</p>
+            <label for="treat_column">Choose the treatment column:</label>
+            <select id="columns" name="treat_column">
+                {% for column in columns %}
+                <option value='{{column}}'>{{ column }}</option>
+                {% endfor %}
+            </select>
+
+            <br/>
+
+            <p>The outcome column is the column that is being determined if it is being influenced by the treatment column.</p>
+            <label for="out_column">Choose the outcome column:</label>
+            <select id="columns" name="out_column">
+                {% for column in columns %}
+                <option value='{{column}}'>{{ column }}</option>
+                {% endfor %}
+            </select>
+
+            <p>If you chose the single covariate option, please choose the column that will be your single covariate. If not set this value to N/A.</p>
+            <label for="covariate_column">Choose the single covariate column:</label>
+            <select id="columns" name="covariate_column">
+                <option value='N/A'>N/A</option>
+                {% for column in columns %}
+                <option value='{{column}}'>{{ column }}</option>
+                {% endfor %}
+            </select>
+
+            <br/>
+
+            <select name="fileName" hidden>
+                <option value='{{ name }}'></option>
+            </select>
+
+            <br/>
+
+            <select name="delimiter" hidden>
+                <option value='{{ delim }}'></option>
+            </select>
+
+            <br/>
+
+            <select name="functionNum" hidden>
+                <option value=' {{ functionNum }}'></option>
+            </select>
+            
+            <br/>
+
+            <input type="submit" value="Submit">
+        </form>
+        
+    </div>
+{% endblock %}

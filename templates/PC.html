@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>PC Output Page</title>
+{% endblock %}
+
+{% block body %}
+    <div>
+        {% for Line in Lines %}
+        <p>{{ Line }}</p>
+        {% endfor %}
+
+        <br/>
+
+        <p>The meaning of the above adjacency matrix directly from the MXM documentation: </p>
+        <p>The final adjaceny matrix with the orientations. If G[i, j] = 2 then G[j, i] = 3.
+            This means that there is an arrow from node i to node j. If G[i, j] = G[j, i] =
+            0; there is no edge between nodes i and j. If G[i, j] = G[j, i] = 1; there is an
+            (undirected) edge between nodes i and j.</p>
+    </div>
+{% endblock %}
