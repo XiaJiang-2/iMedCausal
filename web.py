@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 import pandas as pd
+import rpy2
+import numpy as np
+import networkx
+import matplotlib.pyplot as plt
 
 
 import iRCT
@@ -133,8 +137,11 @@ def PC_Page():
         fileName = request.args.get('name', None)
         pcObject = PC.PC(fileName)
         os.remove(fileName)
-        pcOutput = pcObject.output.split("\n")
-        return render_template("PC.html", Lines=pcOutput)
+        # adjArray = np.array(pcObject.output)
+        # G = networkx.from_numpy_array(adjArray, create_using=networkx.DiGraph)
+        # networkx.draw(G)
+        # plt.savefig("PC_Output.png")
+        return render_template("PC.html", Lines=pcObject.output)
     
 @app.route("/rFCI", methods=['GET', 'POST'])
 def rFCI_Page():

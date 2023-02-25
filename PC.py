@@ -35,4 +35,4 @@ class PC:
         r_func = robjects.r(r_func_code)
         x = r_func(self.fl)
         # Return the length of time the algorithm took to run and the string representation of the adjacency matrix
-        return time.time()-start, str(x)
+        return time.time()-start, x
