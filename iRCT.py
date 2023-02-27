@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np
 import math
-import statsmodels.api as sm
 import matplotlib.pyplot as plt
-import seaborn as sns
 import time
-import statsmodels.formula.api as smf
 
 from sklearn.linear_model import LogisticRegression
 
