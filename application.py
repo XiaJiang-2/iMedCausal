@@ -197,7 +197,7 @@ def FCI_Page():
         fileName = request.form['fileName']
         delimiter = request.form['delim']
 
-        df = pd.read_csv(fileName, sep=delimiter)
+        # df = pd.read_csv(fileName, sep=delimiter)
 
         # fciObject = FCI.FCI(df, "static/images/FCI_Output.png")
         # os.remove(fileName)
