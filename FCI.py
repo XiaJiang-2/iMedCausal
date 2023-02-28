@@ -29,7 +29,7 @@ class FCI:
         labels = self.df.columns
         pdy = GraphUtils.to_pydot(G, labels=labels)
         my_networkx_graph = networkx.drawing.nx_pydot.from_pydot(pdy)
-        plt.savefig("static/images/FCI_Output.png", format="PNG")
+        plt.savefig("templates/images/FCI_Output.png", format="PNG")
 
         # Return the length of time the algorithm took to run
         return algorithmTime
