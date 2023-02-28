@@ -101,10 +101,11 @@ def causalLearnHome():
         if 'file' not in request.files:
             return redirect("/CausalLearnHome")
         f = request.files['file']
+        data_path = 'datasets/' + secure_filename(f.filename)
         if f and allowed_file(f.filename):
-            f.save(f.filename)
+            f.save(data_path)
             uploaded_file=True
-            return redirect(url_for('CausalLearn_Page', filename=f.filename, uploaded_file=uploaded_file))
+            return redirect(url_for('CausalLearn_Page', filename=data_path, uploaded_file=uploaded_file))
         else:
             return redirect("/CausalLearnHome")
         
