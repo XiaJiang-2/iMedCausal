@@ -220,4 +220,4 @@ def GES_Page():
         return render_template("GES_Output.html")
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0')
+    application.run(debug=True)
