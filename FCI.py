@@ -26,7 +26,7 @@ class FCI:
         # Create an image using the results of the FCI algorithm and save it to the outputLocation specified
         labels = self.df.columns
         pdy = GraphUtils.to_pydot(G, labels=labels)
-        # pdy.write_png(self.outputLocation)
+        pdy.write_png(self.outputLocation)
 
         # Return the length of time the algorithm took to run
         return algorithmTime

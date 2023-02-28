@@ -199,7 +199,7 @@ def FCI_Page():
 
         df = pd.read_csv(fileName, sep=delimiter)
 
-        fciObject = FCI.FCI(df, "static/images/FCI_Output.png")
+        fciObject = FCI.FCI(df, "/static/images/FCI_Output.png")
         # os.remove(fileName)
         return render_template("FCI_Output.html")
 
