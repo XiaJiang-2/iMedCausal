@@ -6,9 +6,8 @@ import time
 from causallearn.utils.GraphUtils import GraphUtils
 
 class FCI:
-    def __init__(self, dataframe, outputLocation):
+    def __init__(self, dataframe):
         self.df = dataframe
-        self.outputLocation = outputLocation
         self.timeToComplete = self.calculateFCI()
 
     def calculateFCI(self):
@@ -26,7 +25,7 @@ class FCI:
         # Create an image using the results of the FCI algorithm and save it to the outputLocation specified
         labels = self.df.columns
         pdy = GraphUtils.to_pydot(G, labels=labels)
-        pdy.write_png(self.outputLocation)
+        pdy.write_png("static/images/FCI_Output.png")
 
         # Return the length of time the algorithm took to run
         return algorithmTime
