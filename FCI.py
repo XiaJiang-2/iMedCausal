@@ -1,10 +1,7 @@
 from causallearn.search.ConstraintBased.FCI import fci
 import numpy as np
 import pandas as pd
-import networkx
 import time
-import matplotlib.pyplot as plt
-
 
 from causallearn.utils.GraphUtils import GraphUtils
 
@@ -28,8 +25,7 @@ class FCI:
         # Create an image using the results of the FCI algorithm and save it to the outputLocation specified
         labels = self.df.columns
         pdy = GraphUtils.to_pydot(G, labels=labels)
-        my_networkx_graph = networkx.drawing.nx_pydot.from_pydot(pdy)
-        plt.savefig("templates/images/FCI_Output.png", format="PNG")
+        pdy.write_png("FCI_Output.png")
 
         # Return the length of time the algorithm took to run
         return algorithmTime

@@ -5,7 +5,7 @@ import numpy as np
 import networkx
 import matplotlib.pyplot as plt
 from werkzeug.utils import secure_filename
-
+from IPython.display import display_html
 
 import iRCT
 import PC
@@ -200,7 +200,7 @@ def FCI_Page():
         df = pd.read_csv(fileName, sep=delimiter)
 
         fciObject = FCI.FCI(df)
-        # os.remove(fileName)
+        # os.remove(fileName)   
         return render_template("FCI_Output.html")
 
 @application.route("/GES", methods=['GET', 'POST'])
