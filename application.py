@@ -5,7 +5,6 @@ import numpy as np
 import networkx
 import matplotlib.pyplot as plt
 from werkzeug.utils import secure_filename
-from IPython.display import display_html
 
 import iRCT
 import PC
