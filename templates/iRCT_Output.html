@@ -8,5 +8,10 @@
     <div id="output">
         <p>Relation Value for the treatment being "{{ treatment }}" and the outcome being "{{ outcome }}":</p>
         <p>{{ result }}</p>
+        
+        <br/>
+        <br/>
+
+        <p>This result represents an amount (The units are dependent on the units of the outacome column) of change in the outcome based on the presence of the treatment. So if the number is .10 that means your outcome increased on average by .10 when the treatment was present. However, this value does not identify how that amount increase is distributed.</p>
     </div>
 {% endblock %}
