@@ -18,10 +18,16 @@
                 </p>
             </div>
           </div>
-        <!-- <ul>MBIL - This is the MBIL version of java which uses Markov Blanket and Interactive factor learning in order to determine the direct causes for the chosen variable.</ul>-->
+
+        <div class="dropdown">
+            <button class="dropbtn">Methods available</button>
+            <div class="dropdown-content">
+                        <!-- <ul>MBIL - This is the MBIL version of java which uses Markov Blanket and Interactive factor learning in order to determine the direct causes for the chosen variable.</ul>-->
         <ul>iRCT - This is the most up-to-date version of iRCT which uses propensity scores based off of all covariates in order to do matching and then calculates the average treatment effect using these matches.</ul>
         <ul>Multi-covariate iterative iRCT - This method uses an iterative process to slowly work through all the data selecting the best match based on propensity scores calcualted via all covariates. This method may take a while due to the iterative nature. Best to use on small datasets.</ul>
         <ul>Single-covariate iRCT - This is the most basic form of iRCT allowing you to select a treatment, outcome, and the single covariate to match on. This method may take a while due to the iterative nature. Best to use on small datasets.</ul>
+            </div>
+        </div>
         <br/>
 
         <a href="/iRCTHome">Go to iRCT page.</a>
