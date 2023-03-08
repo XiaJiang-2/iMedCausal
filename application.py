@@ -26,6 +26,31 @@ def home():
     if request.method == 'GET':
         return render_template("home.html")
 
+@application.route("/transformData", methods=['GET', 'POST'])
+def transformData():
+    if request.method == 'GET':
+        return render_template("transformData.html")
+    
+    if request.method == 'POST':
+         if 'file' not in request.files:
+            return redirect("/transformData")
+         f = request.files['file']
+         delim = request.form['delim']
+         if f and allowed_file(f.filename):
+
+            df = pd.read_csv(f, sep=delim)
+            for col_name in df.columns:
+                if(df[col_name].dtype == 'object'):
+                    df[col_name] = df[col_name].astype('category')
+                    df[col_name] = df[col_name].cat.codes
+
+            with open("static/transformed_datasets/transformed_dataset.txt", 'a') as f:
+                f.truncate(0)
+
+            df.to_csv("static/transformed_datasets/transformed_dataset.txt", index=False)
+            
+            return render_template("transformOutput.html")
+
 @application.route("/iRCTHome", methods=['GET', 'POST'])
 def iRCTHome():
 

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Data Transformation Page</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the Causal Learning webpage!</h1>
+
+    <br/>
+
+    <ul>Please upload your dataset to convert it to all numerical values</ul>
+    <ul>The currently accepted file formats are: txt, csv, xlsx, and dat</ul>
+    <ul>Ensure your dataset has column names, if not the first row will be assumed to be the column names</ul>
+
+    <div id="input">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <br/>
+
+            <label for="delim">Please specify the delimiter for your dataset here:</label>
+            <select id="delimiters" name="delim">
+                <option value=":">colon</option>
+                <option value=",">comma</option>
+                <option value="|">pipe</option>
+                <option value=";">semicolon</option>
+                <option value=" ">space</option>
+                <option value="\t">tab</option>
+            </select>
+            <br/>
+
+            <input type="submit" value="Upload">
+        </form>
+
+        
+    </div>
+{% endblock %}

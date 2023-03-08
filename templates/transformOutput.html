@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Data Transformation Output Page</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Please note a few things:</h1>
+    <ul>The new dataset is named transformed_dataset.txt</ul>
+    <ul>The new dataset will be comma seperated no matter the previous delimiter.</ul>
+    <ul>The transformation function may not be perfect, please check your dataset to make sure it was transformed properly.</ul>
+
+    <br/>
+
+    <a href="/static/transformed_datasets/transformed_dataset.txt" download>Download your transformed dataset here!</a>
+{% endblock %}
